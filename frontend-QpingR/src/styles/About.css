@@ -1,0 +1,133 @@
+/* src/styles/About.css */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px; /* Increased padding for breathing room */
+  background: #000000; /* Black background */
+  color: #ffffff; /* White text for base color */
+  position: relative; /* For positioning the circles */
+  overflow: hidden; /* Prevent circle overflow */
+}
+
+/* Left Circle (top-left corner) */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Half the section width for the circle */
+  height: 100%; /* Full height */
+  background: radial-gradient(circle at top center, #d4a373 50%, transparent 50%); /* Brown circle at top */
+  transform: translateX(-50%); /* Shift left to align with left edge */
+  z-index: 0; /* Behind content */
+}
+
+/* Right Circle (top-right to bottom-right) */
+.about::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* Half the section width for the circle */
+  height: 100%; /* Full height */
+  background: radial-gradient(circle at center, #d4a373 50%, transparent 50%); /* Brown circle */
+  transform: translateX(50%); /* Shift right to align with right edge */
+  z-index: 0; /* Behind content */
+}
+
+.about-video {
+  flex: 1;
+  max-width: 500px; /* Slightly larger max width */
+  margin: 20px;
+  animation: slideInLeft 1s ease-out;
+  z-index: 1; /* Above circles */
+}
+
+.about-video-player {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Limit video height */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  object-fit: cover; /* Ensure video fits nicely */
+}
+
+.about-text {
+  flex: 2;
+  max-width: 600px;
+  margin: 20px;
+  animation: slideInRight 1s ease-out;
+  z-index: 1; /* Above circles */
+}
+
+.about-text h2 {
+  font-size: 40px; /* Slightly larger for emphasis */
+  font-weight: 700;
+  color: #ffffff; /* White text */
+  margin-bottom: 25px;
+  text-align: left; /* Align with text */
+}
+
+.about-text p {
+  font-size: 18px; /* Larger for readability */
+  line-height: 1.6; /* Better spacing */
+  color: #ffffff; /* White text */
+  margin-bottom: 15px;
+  text-align: left; /* Consistent alignment */
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 40px 15px; /* Reduced padding for mobile */
+  }
+  .about::before {
+    width: 100%; /* Full width on mobile */
+    height: 50%; /* Half height */
+    background: radial-gradient(circle at bottom center, #d4a373 50%, transparent 50%);
+    transform: translateX(0) translateY(-50%); /* Top half on mobile */
+  }
+  .about::after {
+    width: 100%; /* Full width on mobile */
+    height: 50%; /* Half height */
+    background: radial-gradient(circle at top center, #d4a373 50%, transparent 50%);
+    transform: translateX(0) translateY(50%); /* Bottom half on mobile */
+  }
+  .about-video,
+  .about-text {
+    max-width: 100%;
+    margin: 15px 0;
+  }
+  .about-text h2 {
+    font-size: 32px;
+    text-align: center; /* Center on mobile */
+  }
+  .about-text p {
+    font-size: 16px;
+    text-align: center; /* Center on mobile */
+  }
+}

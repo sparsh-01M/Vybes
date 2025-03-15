@@ -1,0 +1,156 @@
+/* src/styles/Header.css */
+header {
+  background: #000000; /* Black background */
+  color: #d4a373; /* Light brown text */
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Darker shadow for contrast */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out left, center, right */
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #d4a373; /* Light brown */
+  letter-spacing: 1px;
+  text-align: center;
+  flex-grow: 1; /* Allows logo to center itself */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+nav a, .user-name {
+  margin-left: 30px;
+  font-size: 16px;
+  color: #d4a373; /* Light brown */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s, background 0.3s;
+}
+
+nav a:hover {
+  color: #000000; /* Black text on hover */
+  background: #d4a373; /* Light brown background on hover */
+  border-radius: 4px;
+}
+
+.profile-btn {
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 20px;
+  background: #d4a373; /* Light brown */
+  color: #000000; /* Black text */
+  border: none;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.profile-btn:hover {
+  background: #b8860b; /* Darker brown on hover */
+}
+
+.logout-btn {
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 20px;
+  background: #d4a373; /* Light brown */
+  color: #000000; /* Black text */
+  border: none;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #b8860b; /* Darker brown on hover */
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #d4a373; /* Light brown hamburger */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-left, .nav-right {
+    display: none; /* Hide by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background: #000000; /* Black background */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  .nav-left.mobile-active, .nav-right.mobile-active {
+    display: flex; /* Show when active */
+  }
+  nav a, .profile-btn, .logout-btn, .user-name {
+    margin: 15px 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    flex-grow: 0; /* Prevent logo from taking extra space on mobile */
+  }
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-login-btn:hover {
+  background: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #fff;
+}
