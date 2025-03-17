@@ -11,9 +11,9 @@ const port = 5001;
 app.use(
   cors({
     origin: "https://qping-r.vercel.app", // Allow only your frontend
-    credentials: true, // Allow cookies, authorization headers
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    // credentials: true, // Allow cookies, authorization headers
+    methods: "GET", "POST", "PUT", "DELETE", // Allowed HTTP methods
+    allowedHeaders: "Content-Type", "Authorization", // Allowed headers
   })
 );
 // Middleware
