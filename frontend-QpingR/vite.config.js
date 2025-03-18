@@ -15,7 +15,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // Replace with your API backend URL
+        target: 'https://vybes-inky.vercel.app', // Replace with your API backend URL
         changeOrigin: true,
         secure: false,
         configure: (proxy, options) => {
